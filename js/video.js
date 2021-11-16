@@ -23,7 +23,7 @@ const origBtn = document.getElementById("orig");
 // event listeners
 playBtn.addEventListener("click", () => {
   video.play();
-  volume.innerText = slider.value;
+  volume.innerText = slider.value + "%";
   console.log("Play Video");
 });
 
@@ -32,7 +32,6 @@ pauseBtn.addEventListener("click", () => {
   console.log("Pause Video");
 });
 
-// let speed_diff = 0;
 slowerBtn.addEventListener("click", () => {
   let speed = video.playbackRate;
   let new_speed = speed - speed * 0.05;
@@ -42,7 +41,6 @@ slowerBtn.addEventListener("click", () => {
 
 fasterBtn.addEventListener("click", () => {
   let speed = video.playbackRate;
-  // get the previous speed of the current speed
   let new_speed = speed + (speed * 1.0526) * 0.05;
   video.playbackRate = new_speed;
   console.log(new_speed);
